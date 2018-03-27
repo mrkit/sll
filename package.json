@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -p & forever start server",
+    "start": "webpack -p & forever start --id 'sll' --minUptime 1000 --spinSleepTime 1000 server",
     "dev": "webpack -w & nodemon server"
   },
   "keywords": [],
@@ -30,6 +30,10 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.37.4",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.3.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^2.0.13"
   }
 }
