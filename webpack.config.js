@@ -2,7 +2,7 @@ const r = require('path').resolve,
       UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: r(__dirname, 'client', 'public', 'react.jsx'),
   output: {
     filename: 'bundle.js',

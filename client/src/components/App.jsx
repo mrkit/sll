@@ -4,11 +4,11 @@ import Main from './Main.jsx'
 import Footer from './Footer.jsx'
 
 const App = () => (
-  <Fragment>
+  <div id='container'>
     <Header />
     <Main />
     <Footer />
-  </Fragment>
+  </div>
 )
 
 export default App;
