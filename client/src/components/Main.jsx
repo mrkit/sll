@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
-import Admin from './pages/Admin.jsx';
 import axios from 'axios';
 
 class Main extends Component {
@@ -22,7 +21,6 @@ class Main extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />
-          <Route path='/admin' component={Admin} />
         </Switch>
       </main>
     )

@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import Dashboard from './Dashboard.jsx';
 
 class Admin extends Component {
   state = {
@@ -53,10 +54,10 @@ class Admin extends Component {
   render(){
     return (
       this.state.loggedIn ? 
-      <Fragment>
-        You made it!
-        <button onClick={this.handleLogout}>Log Out</button>      
-      </Fragment>
+      <div id='admin'>
+        <button onClick={this.handleLogout}>Log Out</button>  
+        <Dashboard />    
+      </div>
       :
       <Fragment>
         <form id="login" onSubmit={this.handleSubmit}>
