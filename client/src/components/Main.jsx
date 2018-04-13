@@ -7,7 +7,6 @@ import axios from 'axios';
 class Main extends Component {
   
   componentWillMount(){
-    console.log('Hello world, localstorage is =', localStorage);
     if(localStorage.bizken){
       axios.defaults.headers.common.authorization = `Bearer ${localStorage.bizken}`;
     } else {

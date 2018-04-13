@@ -4,6 +4,7 @@ import Header from './Header.jsx';
 import Main from './Main.jsx';
 import Footer from './Footer.jsx';
 import Admin from './pages/Admin/Admin.jsx';
+import '../../public/stylesheets/main.scss';
 
 const App = () => (
   <Switch>

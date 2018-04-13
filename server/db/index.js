@@ -1,8 +1,11 @@
 const conn = require('./conn'),
       Users = require('./Users'),
-      { username, password } = require('./secret.js');
+      { username, password, devpw } = require('./secret.js'),
+      env = require('../../webpack.config.js').mode;
 
-const seed = () => Users.create({ username, password })
+const pw = env === 'production' ? password : devpw;
+
+const seed = () => Users.create({ username, password: pw })
 
 module.exports = {
   conn,

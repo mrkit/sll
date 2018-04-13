@@ -1,7 +1,8 @@
 const r = require('path').resolve,
-      UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+      UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+      ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports = {
+const config = {
   mode: 'development',
   entry: r(__dirname, 'client', 'public', 'react.jsx'),
   output: {
@@ -16,7 +17,34 @@ module.exports = {
       options: {
         presets: ['env', 'react', 'stage-2']
       }
+    }, {
+      test: /\.(s*)css$/,
+      use: this.mode ==='production' ? ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            url: false,
+            localIdentName: '[name]-[local]-[hash:base64:5]'
+          }
+        }, 
+        'sass-loader']
+      }) : ['style-loader', {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            url: false,
+            localIdentName: '[name]-[local]-[hash:base64:5]'
+          }
+        }, 'sass-loader']
     }]
   }, 
-  plugins: [ new UglifyJSPlugin()]
+  plugins: []
 };
+
+if(config.mode === 'production'){
+  config.plugins.push(new UglifyJSPlugin(), new ExtractTextPlugin('../stylesheets/lea.css'))
+}
+
+module.exports = config;

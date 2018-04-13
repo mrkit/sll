@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Dashboard from './Dashboard.jsx';
+import './admin.css';
 
 class Admin extends Component {
   state = {
@@ -10,7 +11,6 @@ class Admin extends Component {
   }
   
   componentDidMount(){
-    console.log('Logged in = ', this.state.loggedIn);
     if(localStorage.bizken){
       this.setState({ loggedIn: true });
     }
@@ -40,7 +40,7 @@ class Admin extends Component {
         this.setState({ loggedIn: true });
       }
     })
-    .catch(err => console.log('Error message =', err.message));
+    .catch(err => console.log('Auth Error message (probably wrong password) =', err.message));
     
     username.value = '';
     password.value = '';
@@ -60,9 +60,9 @@ class Admin extends Component {
       </div>
       :
       <Fragment>
-        <form id="login" onSubmit={this.handleSubmit}>
-          <input type="text" name="username" placeholder="Login" autoFocus onChange={this.handleChange} value={this.state.username}/>
-          <input type="password" name="password" placeholder="Password" onChange={this.handleChange}value={this.state.password} />
+        <form id='login' onSubmit={this.handleSubmit}>
+          <input type='text' name='username' placeholder='Login' autoFocus onChange={this.handleChange} value={this.state.username}/>
+          <input type='password' name='password' placeholder='Password' onChange={this.handleChange}value={this.state.password} />
           <button>Login</button>
         </form>
       </Fragment>
