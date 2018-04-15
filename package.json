@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --mode production & forever start --id 'sll' --minUptime 1000 --spinSleepTime 1000 server",
-    "dev": "webpack -w --mode development & nodemon server",
-    "devs": "webpack -w --mode development --entry='./client/main.js' & nodemon server"
+    "dev": "webpack -w --mode development & nodemon server"
   },
   "keywords": [],
   "author": "",

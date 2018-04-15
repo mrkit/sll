@@ -5,7 +5,7 @@ const r = require('path').resolve,
 
 const config = {
   mode: 'development',
-  entry: './client/main.js',
+  entry: './client/index.js',
   output: {
     filename: 'bundle.js',
     path: r(__dirname, 'dist'),
@@ -15,6 +15,9 @@ const config = {
     contentBase: 'dist',
     overlay: true,
     hot: true
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
   },
   module: {
     rules: [{

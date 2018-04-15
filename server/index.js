@@ -15,7 +15,7 @@ const w = require('webpack'),
 server.use([wdm, whm, express.static(r(__dirname, '..', 'dist')), m('dev'), bp.json(), bp.urlencoded({ extended: false })]);
 
 server.use('/api', require('./api'));
-server.get('/*', (req, res) => res.sendFile(r(__dirname, '..', 'client', 'public', 'index.html')));
+server.get('/*', (req, res) => res.sendFile(r(__dirname, '..', 'client', 'index.html')));
 
 server.use((err, req, res, next) => {
   if(err) console.log(`Catch-all error message = ${err.message}`);

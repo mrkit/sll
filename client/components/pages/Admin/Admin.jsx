@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Dashboard from './Dashboard.jsx';
-import './admin.css';
+import './admin.scss';
 
 class Admin extends Component {
   state = {

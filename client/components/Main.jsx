@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
+import Home from './pages/Home';
+import About from './pages/About';
 import axios from 'axios';
 
 class Main extends Component {
