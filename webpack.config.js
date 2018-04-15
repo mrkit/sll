@@ -1,13 +1,20 @@
 const r = require('path').resolve,
       UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
-      ExtractTextPlugin = require('extract-text-webpack-plugin');
+      ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      webpack = require('webpack');
 
 const config = {
   mode: 'development',
-  entry: r(__dirname, 'client', 'public', 'react.jsx'),
+  entry: './client/main.js',
   output: {
     filename: 'bundle.js',
-    path: r(__dirname, 'client', 'public', 'js')
+    path: r(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  devServer: {
+    contentBase: 'dist',
+    overlay: true,
+    hot: true
   },
   module: {
     rules: [{
@@ -45,6 +52,9 @@ const config = {
 
 if(config.mode === 'production'){
   config.plugins.push(new UglifyJSPlugin(), new ExtractTextPlugin('../stylesheets/lea.css'))
+}
+if(config.mode === 'development'){
+  config.plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 
 module.exports = config;
