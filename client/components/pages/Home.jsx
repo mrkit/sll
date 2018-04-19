@@ -5,7 +5,7 @@ const Home = () => (
     <section>
       <article>
         <h2>Welcome to my Home page!</h2>
-        <p>Bob muller</p>
+        <p></p>
       </article>
       <article>
         <img src="" alt="temp"/>

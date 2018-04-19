@@ -7,7 +7,7 @@ class Dashboard extends Component {
   
   render(){
     return (
-      <Fragment>
+      <div className="admin">
         <header>
           <h1>Dashboard</h1>
         </header>
@@ -28,7 +28,7 @@ class Dashboard extends Component {
           
         </footer>
         
-      </Fragment>
+      </div>
     )
   }
 }

@@ -54,7 +54,7 @@ const config = {
 };
 
 if(config.mode === 'production'){
-  config.plugins.push(new UglifyJSPlugin(), new ExtractTextPlugin('../stylesheets/lea.css'))
+  config.plugins.push(new UglifyJSPlugin(), new ExtractTextPlugin('/styles.css'))
 }
 if(config.mode === 'development'){
   config.plugins.push(new webpack.HotModuleReplacementPlugin())
