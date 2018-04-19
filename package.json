@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "try": "webpack --mode production & node server",
     "start": "webpack --mode production & forever start --id 'sll' --minUptime 1000 --spinSleepTime 1000 server",
     "dev": "webpack -w --mode development & nodemon server"
   },

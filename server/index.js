@@ -23,4 +23,4 @@ server.use((err, req, res, next) => {
 
 db.conn.sync({ force: true })
 .then(() => db.seed())
-.then(() => server.listen(3007, console.log('made it to SLL on port 3007')));
+.then(() => server.listen(3006, console.log('made it to SLL on port 3006')));
